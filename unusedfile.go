@@ -12,7 +12,7 @@ import (
 
 var ErrNotReachUnusedFileName = errors.New("cannot reach unused file name")
 
-func (b *BaseFolder) UnuseFilePath(t time.Time, fileNameBase, fileNameSuffix string, flag int, perm os.FileMode, maxAttempts int) (unuseFilePath string, err error) {
+func (b *BaseFolder) UnuseFilePath(t time.Time, fileNameBase, fileNameSuffix string, maxAttempts int) (unuseFilePath string, err error) {
 	folderPath, err := b.SetupFolder(t)
 	if nil != err {
 		err = fmt.Errorf("cannot setup folder for time (%v): %w", t, err)
